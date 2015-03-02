@@ -1,12 +1,12 @@
-<!DOCTYPE html><html><head><title>Web-Components-Template</title><meta charset="utf-8"><link rel="stylesheet" type="text/css" href="/resource/css/base.css"><script type="text/javascript" src="/resource/js/jquery-2.1.3.min.js"></script></head><body></body><h1>Web-Components-Template</h1><h2>2014-07-14 21:18:10</h2><a href="/2014/07/15/Web-Components-Decorators">下一篇 Web-Components-Decorators</a><br><a href="/2014/06/27/Html5-Canvas-Duplicated-On-Android">上一篇 Html5-Canvas-Duplicated-On-Android</a><div class="article-entry"><p>当 <code>Web Components API</code> 出现的时候,我就感觉这东西也许就是前端的未来了。<code>Web Components</code> 补充了很多当前HTML标准的缺陷。</p>
+<!DOCTYPE html><html><head><title>Web-Components-Template</title><meta charset="utf-8"><link rel="stylesheet" type="text/css" href="/resource/css/base.css"><link rel="stylesheet" type="text/css" href="/resource/css/article.css"><script type="text/javascript" src="/resource/js/jquery-2.1.3.min.js"></script></head><body></body><div class="content"><h1 class="title h-font">Web-Components-Template</h1><h3 class="date h-font">2014-07-14</h3><div class="article-entry"><p>当 <code>Web Components API</code> 出现的时候,我就感觉这东西也许就是前端的未来了。<code>Web Components</code> 补充了很多当前HTML标准的缺陷。</p>
 <p><code>Web Components API</code> 由以下5个部分组成:</p>
-<blockquote>
-<p>Templates
-Decorators 
-Custom Elements
-Shadow DOM
-Imports</p>
-</blockquote>
+<ul>
+<li>Templates</li>
+<li>Decorators </li>
+<li>Custom Elements</li>
+<li>Shadow DOM</li>
+<li>Imports</li>
+</ul>
 <p>下面我先来介绍一下第一部分,也就是 <code>Web Components</code> 的 <code>Templates</code>。</p>
 <p><a href="http://www.w3.org/TR/2013/WD-html-templates-20130214/">W3C</a> 官方的解释如下:</p>
 <blockquote>
@@ -24,16 +24,16 @@ Imports</p>
 </code></pre><p>注意: <code>Template</code> 在浏览器中的表现形式是 <code>display:none</code> 的，其实它就是一个隐藏的普通特殊而已。</p>
 <p>如果我想通过 <code>document.querySelector(&#39;#myTemplate&#39;).childNodes</code> 来获取上面代码的子结点,那是做不到的。因为 <code>Template</code> 标签里的东西在浏览器中的表现形式是空的,即 <code>不存在</code>。</p>
 <p>当然,我们还是可以通过 <code>document.querySelector(&#39;#myTemplate&#39;).content</code> 来解决这个问题的。</p>
-<p>在Document中,这段代码如下:
-<img width="600px" src="/static/img/templates_1.png" alt="Templates"></p>
+<p>在Document中,这段代码如下:</p>
+<p><img width="600px" src="/static/img/templates_1.png" alt="Templates"></p>
 <p>我们用如下js来渲染这个模版:</p>
 <pre><code>var template = document.querySelector(&#39;#myTemplate&#39;);
 var btn = template.content.cloneNode(true);
 btn.querySelector(&quot;.common_btn&quot;).innerHTML = &quot;按钮&quot;;
 document.body.appendChild(btn);
 </code></pre><p>OK,这样一个渲染好的按钮就出现在了页面中。</p>
-<p>最后说说 <code>Template</code>的兼容性,Can I Use数据截图如下:
-<img width="900px" src="/static/img/templates_2.png" alt="Templates">
-目前Chrome的支持是最好的,不过不用担心,因为,这就是未来！</p>
+<p>最后说说 <code>Template</code>的兼容性,Can I Use数据截图如下:</p>
+<p><img width="900px" src="/static/img/templates_2.png" alt="Templates"></p>
+<p>目前Chrome的支持是最好的,不过不用担心,因为,这就是未来！</p>
 <p>补充: <code>Template</code> 标签中的任何元素都是不会被渲染的,所以不用担心在 <code>Template</code> 中引入了 <code>image</code> 标签等需要加载资源的元素,只有通过 <code>javaScript</code> , <code>Custom Elements</code>等方法渲染之后这些 <code>Template</code>才会其作用哦～所以,放心大胆的使用吧！</p>
-</div></html>
+</div><div class="page"><a href="/2014/06/27/Html5-Canvas-Duplicated-On-Android" class="prev">上一篇 Html5-Canvas-Duplicated-On-Android</a><a href="/2014/07/15/Web-Components-Decorators" class="next">下一篇 Web-Components-Decorators</a></div></div></html>
