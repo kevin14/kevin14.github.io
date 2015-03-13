@@ -1,0 +1,61 @@
+<!DOCTYPE html><html><head><title>推荐个自己写的博客工具</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"><link rel="stylesheet" type="text/css" href="/resource/css/base.css"><link rel="stylesheet" type="text/css" href="/resource/css/article.css"><script type="text/javascript" src="/resource/js/jquery-2.1.3.min.js"></script></head><body></body><div class="content"><a href="/" class="gohome h-font">Kevin14的博客</a><div class="title_box"><h1 class="title h-font">推荐个自己写的博客工具</h1><h3 class="date h-font">2015-03-13</h3></div><div class="article-entry"><p>前端时间<a href="http://hexo.io">Hexo</a>由于渲染器的原因出了bug，正好闲来无事，就随手建立一个博客工具。这里就和大家分享一想我的<a href="https://github.com/kevin14/blogo">Blogo</a>使用方法和开发经验。</p>
+<hr>
+<h2 id="-">使用起来很简单：</h2>
+<h4 id="-">下载及安装</h4>
+<p><code>npm install blogo -g</code></p>
+<h4 id="-">使用</h4>
+<p><code>blogo init &amp;&amp; blogo start</code></p>
+<h4 id="-">创建博客</h4>
+<p><code>blogo init (dirname) || blogo i</code></p>
+<h4 id="-">创建一篇新文章</h4>
+<p><code>blogo new (articleName) || blogo n</code></p>
+<h4 id="-">创建一篇新文章并且开启服务</h4>
+<p><code>blogo new -s</code></p>
+<h4 id="-">创建一个新示例</h4>
+<p><code>blogo sample (sampleName)</code></p>
+<h4 id="-web-">创建一个本地web服务用来预览博客</h4>
+<p><code>blogo start || blogo s</code></p>
+<h4 id="-">提交博客</h4>
+<p><code>blogo deploy || blogo d</code></p>
+<h4 id="-md-blog">手动编译md到blog</h4>
+<p><code>blogo generate || blogo g</code></p>
+<h4 id="-">删除一篇文章</h4>
+<p><code>blogo remove (articleName) || blogo r</code></p>
+<h4 id="-">特殊标记</h4>
+<p><code>{-demo(demoName)-}</code> 在MarkDown中使用此标记用于在当前位置插入创建好的demo示例</p>
+<hr>
+<h2 id="-">经验</h2>
+<p>我把<code>Blogo</code>按照功能分成几个部分：</p>
+<ol>
+<li><code>Digger</code></li>
+<li><code>DataParser</code></li>
+<li><code>View</code></li>
+<li><code>Generator</code></li>
+</ol>
+<p>以及几个辅助功能：</p>
+<ol>
+<li><code>Watcher</code></li>
+<li><code>Commander</code></li>
+<li><code>Deployer</code>
+等...</li>
+</ol>
+<hr>
+<h4 id="-digger-"><code>Digger</code>:</h4>
+<p>主要负责挖掘<code>.md</code>文件的数据，例如，标题、时间、Tag、内容等</p>
+<h4 id="-dataparser-"><code>DataParser</code></h4>
+<p>接着数据挖掘结束之后，把得到的数据发送给<code>DataParser</code>,通过<code>DataParser</code>把数据进行MD转化，统计等。</p>
+<h4 id="-generator-view-"><code>Generator &amp; View</code></h4>
+<p><code>Generator</code>把解析之后的数据和<code>View</code>里面的模版进行渲染并且生成最终的静态文件和目录。</p>
+<h4 id="-">其他</h4>
+<p>其他功能，类似实时监听、命令、发布到<code>Git</code>则是对整个博客工具的补充，比如事实监听文章是否被改动，如果改动的话，那么重新挖掘那篇改动文章的数据...-V-</p>
+<hr>
+<p>思路差不多就是这些了，真正实施的时候的确会遇到一大堆想不到的问题，所以这个博客工具断断续续用两个月的业余时间才发布了第一版本～希望大家尝试使用下，如果有<code>bug</code>的话，那就提到<a href="https://github.com/kevin14/blogo/issues">Issue</a>里吧！</p>
+</div><div class="page"><a href="/2015/01/06/CSS属性pointer-events的作用" class="prev">上一篇 CSS属性pointer-events的作用</a><a href="/2015/03/13/推荐个自己写的博客工具" class="next">下一篇 推荐个自己写的博客工具</a></div><div class="comments"><div data-thread-key="2015-03-13 14:57:30" data-title="推荐个自己写的博客工具" data-url="http://kevin14.github.io/2015/03/13/推荐个自己写的博客工具" class="ds-thread"></div><script type="text/javascript">var duoshuoQuery = {short_name:'blogo'};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	|| document.getElementsByTagName('body')[0]).appendChild(ds);
+})();</script></div></div></html>
